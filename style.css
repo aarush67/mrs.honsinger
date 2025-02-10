@@ -1,0 +1,228 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background: linear-gradient(to right, #ff758c, #ff7eb3);
+    color: #fff;
+    margin: 0;
+    padding: 20px;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    overflow: hidden; /* Prevents scrolling */
+}
+
+/* Container */
+.container {
+    max-width: 600px;
+    margin: auto;
+}
+
+/* Welcome Message */
+.welcome {
+    font-size: 2.5em;
+    animation: fadeIn 2s ease-in-out;
+}
+
+/* Countdown Timer */
+.countdown {
+    font-size: 2em;
+    margin: 30px 0;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    animation: slideIn 2s ease-in-out;
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 1.2em;
+    color: #fff;
+    background: #ff4081;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background 0.3s;
+}
+
+.btn:hover {
+    background: #e91e63;
+}
+
+/* Birthday Card */
+.card-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    width: 100%;
+}
+
+.card {
+    width: auto;
+    max-width: 100%;
+    min-width: 250px;
+    height: auto;
+    max-height: 100%;
+    perspective: 1000px;
+    cursor: pointer;
+    transition: transform 0.5s;
+    display: inline-block;
+}
+
+.card .front, .card .inside {
+    width: 100%;
+    height: auto;
+    position: relative;
+    backface-visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2em;
+    padding: 20px;
+    border-radius: 10px;
+    transition: transform 0.6s;
+}
+
+.card .front {
+    background: #ffcccb;
+    color: #333;
+    font-size: 1.5em;
+    text-align: center;
+}
+
+.card .inside {
+    background: #fff;
+    color: #333;
+    padding: 20px;
+    transform: rotateY(180deg);
+    overflow-y: auto;
+    text-align: left;
+}
+
+.card.flipped .front {
+    transform: rotateY(180deg);
+}
+
+.card.flipped .inside {
+    transform: rotateY(0deg);
+}
+
+/* Math Problem Form (Hidden initially) */
+.math-form {
+    display: none;
+    margin-top: 20px;
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: left;
+    width: 100%;
+    max-width: 500px; /* Ensure max width for larger screens */
+    margin: auto;
+}
+
+/* Responsive Math Input Fields */
+.math-input {
+    margin: 10px 0;
+    padding: 10px;
+    font-size: 1.2em;
+    width: 100%; /* Make input fields take full width */
+    max-width: 100%; /* Prevent overflow on small screens */
+    box-sizing: border-box; /* Ensure padding doesn't overflow the container */
+    border-radius: 5px;
+}
+
+/* Math Submit Button */
+.math-btn {
+    padding: 10px 20px;
+    background: #ff4081;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.2em;
+    transition: background 0.3s;
+    width: 100%; /* Make button stretch across the width */
+}
+
+.math-btn:hover {
+    background: #e91e63;
+}
+
+/* Error and Success Messages */
+.error-message, .success-message {
+    font-size: 1.2em;
+    display: none;
+}
+
+.error-message {
+    color: red;
+}
+
+.success-message {
+    color: green;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideIn {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .welcome {
+        font-size: 2em;
+    }
+
+    .countdown {
+        font-size: 1.5em;
+    }
+
+    .card {
+        width: 90%;
+        max-width: 400px;
+    }
+
+    .math-form {
+        padding: 15px;
+    }
+
+    .math-btn {
+        font-size: 1em;
+    }
+}
+
+/* Floating Happy Birthday message */
+.popup {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 2rem;
+    color: #ff69b4;
+    opacity: 0;
+    animation: floatUp 5s forwards;
+}
+
+@keyframes floatUp {
+    0% {
+        top: 0;
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        top: 80%;
+        opacity: 0;
+    }
+}

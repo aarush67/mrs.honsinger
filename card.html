@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Birthday Card</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <h1 class="welcome">🎁 Your Virtual Birthday Card 🎁</h1>
+
+        <!-- Countdown Timer -->
+        <div id="timer" class="countdown"></div>
+
+        <!-- Tap to Open (This will trigger the Math problem form) -->
+        <div class="card-container">
+            <div class="card" onclick="revealMathProblem()">
+                <div class="front">
+                    🎂 Tap to Open 🎂
+                </div>
+                <div class="inside">
+                    <h2>Happy Birthday, Mrs.Honsinger! 🎉</h2>
+                    <p>You are more than just a teacher—you are an inspiration. Your kindness, patience, and dedication light up every classroom. We are so lucky to have you in our lives. <br><br> May your birthday be filled with laughter, joy, and all the happiness you bring to those around you! Enjoy your special day!</p>
+                    <p>With love and appreciation, your Aarush ❤️</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Math Problem Form -->
+        <div id="math-form" class="math-form">
+            <h3>Solve the equation:</h3>
+            <p>x² + 10x = 16x</p>
+            <p>Use the quadratic formula to find the values of x. Round to the nearest hundredths place</p>
+            <input type="text" id="answer1" class="math-input" placeholder="Enter Answer 1 No Spaces (e.g., x=number)" />
+            <input type="text" id="answer2" class="math-input" placeholder="Enter Answer 2 No Spaces (e.g., x=number)" />
+            <button class="math-btn" onclick="validateMathAnswers()">Submit Answer</button>
+            <p id="error-message" class="error-message">Sorry, that’s incorrect. Please try again.</p>
+            <p id="success-message" class="success-message">Correct! Click the card to open it!</p>
+        </div>
+
+        <!-- Back to Main Page -->
+        <a href="index.html" class="btn">Back to Home</a>
+    </div>
+</body>
+</html>
